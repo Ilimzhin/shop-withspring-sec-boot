@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+<div th:switch="${usersSecurity}" align="center">
+    <h2 th:case="null">No users found! Нету(</h2>
+    <div th:case="*">
+        <h2>Users</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>username</th>
+                <th>roles</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="userSecurities : ${userSecurity}">
+                <td th:text="${userSecurities.username}"></td>
+                <td th:text="${userSecurities.roles}"></td>
+<!--                <td><a th:href="@{userSecurity-id/{id}(id=${userSecurity.id})}">Редактировать roles</a></td>-->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/">Home page</a></p>
+</div>
+</body>
+</html>

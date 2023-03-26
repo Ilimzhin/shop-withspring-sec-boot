@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<h2>Пользователи</h2>
+<table>
+  <tr>
+    <th>Имя: </th>
+    <td th:text="${user.firstname}"></td>
+  </tr>
+  <tr>
+    <th>Email: </th>
+    <td th:text="${user.email}"></td>
+  </tr>
+  <tr>
+    <th>Возраст: </th>
+    <td th:text="${user.age}"></td>
+  </tr>
+  <tr>
+    <th>Пол: </th>
+    <td th:text="${user.sex}"></td>
+  </tr>
+  <tr>
+    <th>SOZDATEl: </th>
+    <td th:text="${user.authorName}"></td>
+  </tr>
+<!--  <tr>-->
+<!--    <th>Автор:</th>-->
+<!--    <td th:text="${product.author}"></td>-->
+<!--  </tr>-->
+</table>
+</body>
+
+<head>
+  <meta http-equiv="refresh" content="7; url='http://localhost:8080/users'" />
+</head>
+<body>
+<p>Чтобы вернуться нажмите на <a href="http://localhost:8080/users">Меня</a>.</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Welcome to CodeJava Home</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Приветствую!</h1>
+
+<p>нажми <a th:href="@{/hello}">сюда</a> что бы познакомиться со мной</p>
+
+<div class="container text-center">
+  <h1>Welcome to CodeJava.net</h1>
+
+  <p><a href="/userList">Зарегестрированные</a></p>
+
+  <form action="/users">
+    <input type="submit" value="Все пользователи">
+  </form>
+  <form action="/register">
+  <input type="submit" value="Регистрация">
+</form>
+  <form action="/login">
+  <input type="submit" value="Вход">
+</form>
+</div>
+
+</body>
+</html>

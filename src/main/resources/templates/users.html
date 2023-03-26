@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+
+
+    </style>
+</head>
+<div th:switch="${users}" align="center">
+    <h2 th:case="null">No users found! Нету(</h2>
+    <div th:case="*">
+        <h2>Users</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Возраст</th>
+                <th>Author</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.firstname}"></td>
+                <td th:text="${user.age}"></td>
+                <td th:text="${user.authorName}"></td>
+                <td><a th:href="@{user-info/{id}(id=${user.id})}">Подробнее NW</a></td>
+                <td><a th:href="@{user-id/{id}(id=${user.id})}">Редактировать NW</a></td>
+                <td><a th:href="@{user-delete/{id}(id=${user.id})}">Удалить NW</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/user/create">Создать Товар</a></p>
+</div>
+<div>
+    <div>
+        <form action="/logout" method="post">
+            <div><input type="hidden" name="_csrf" value="${_csrf.token}"/></div>
+            <div><input type="submit" value="Выйти"/></div>
+        </form>
+    </div>
+    <div>
+        <form action="/hello">
+            <input type="submit" value="Вернуться на главную страницу">
+        </form>
+    </div>
+</div>
+</body>
+</html>
